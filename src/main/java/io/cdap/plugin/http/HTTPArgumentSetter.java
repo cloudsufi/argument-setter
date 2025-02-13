@@ -79,7 +79,7 @@ public abstract class HTTPArgumentSetter<T extends HTTPConfig> extends Action {
           String errorReason = String.format("Received non-200 response code %d. Response message = %s",
                   responseCode, response.getResponseMessage());
           throw ErrorUtils.getProgramFailureException(new ErrorCategory(ErrorCategory.ErrorCategoryEnum.PLUGIN),
-                  errorReason, errorReason, ErrorType.USER, false, null);
+                  errorReason, errorReason, ErrorType.USER, true, null);
         }
         handleResponse(context, response.getResponseBodyAsString());
         return;
